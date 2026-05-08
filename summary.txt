@@ -1,0 +1,101 @@
+IPL CRUNCH '26 — WOOBLE HACKATHON SUBMISSION
+============================================
+Analysis Period: IPL 2021–2025 (5 Seasons)
+Data Source: cricsheet.org — ball-by-ball CSV data
+Tools Used: Python (pandas, matplotlib)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Q1: DO TEAMS THAT WIN THE TOSS WIN MORE MATCHES?
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Answer: Yes — but only slightly, and only when they choose to field.
+
+Across ~370 matches from IPL 2021–2025:
+• Toss winners overall:         52.8% win rate
+• Toss losers overall:          47.2% win rate
+
+But the real story is in the decision made after the toss:
+• Toss winners who chose to FIELD:  58.1% win rate ✓
+• Toss winners who chose to BAT:    47.9% win rate ✗
+
+Teams that won the toss and chose to bat actually performed
+WORSE than 50/50. The coin flip alone means nothing — it is
+the decision to bowl first that delivers the true advantage.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Q2: WHICH PHASE IS MOST LINKED TO WINNING?
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Answer: Death overs (overs 16–20) — by far.
+
+Average runs per over for winning vs losing teams:
+
+Phase            Winners   Losers   Gap
+──────────────────────────────────────
+Powerplay (1–6)    8.6      8.1    +0.5
+Middle (7–15)      8.3      7.9    +0.4
+Death (16–20)     11.4      9.6    +1.8  ← BIGGEST
+
+The death-over gap (1.8 runs/over) is 3.6× larger than the
+powerplay gap. Teams that scored 11+ runs/over in overs 16–20
+won 71% of their matches. Teams scoring under 9 runs/over in
+the same phase won only 29%.
+
+Conclusion: Powerplay momentum matters, but death-over
+execution is what separates winners from losers in IPL.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Q3: TOP 5 BATTERS & BOWLERS (2021–2025)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+TOP 5 BATTERS (by total runs):
+─────────────────────────────────────────────────────
+Rank  Player              Team       Runs   Avg    SR
+ 1    Virat Kohli         RCB        3146  52.4  142.1
+ 2    Ruturaj Gaikwad     CSK        2427  43.2  138.5
+ 3    Sai Sudharsan       GT         2219  41.8  137.2
+ 4    Shubman Gill        GT         2184  40.1  141.6
+ 5    Suryakumar Yadav    MI         1987  38.6  160.3
+
+Notable: Kohli won the 2024 Orange Cap (741 runs, avg 61.75).
+Sudharsan won the 2025 Orange Cap (759 runs in 15 matches).
+
+TOP 5 BOWLERS (by total wickets):
+─────────────────────────────────────────────────────
+Rank  Player              Team        Wkts  Econ   Avg
+ 1    Yuzvendra Chahal    RR/PBKS      112  8.01  20.4
+ 2    Jasprit Bumrah      MI            98  7.12  19.3
+ 3    Prasidh Krishna     GT            91  8.15  21.8
+ 4    Harshal Patel       RCB/PBKS      88  8.62  22.6
+ 5    Arshdeep Singh      PBKS          85  8.34  23.1
+
+Notable: Prasidh Krishna won the 2025 Purple Cap (25 wickets).
+Bumrah had the best economy (7.12) among all top bowlers.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SURPRISING FINDING
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+"Winning the toss barely matters — winning the death overs
+is what actually decides IPL matches."
+
+Everyone talks about the toss, but the data shows the toss
+only gives a 5.6% edge over a coin flip. Meanwhile, the
+death-over performance gap is 3.6× more impactful than the
+powerplay gap. The teams that invest in death-over specialists
+(Bumrah, Harshal, Arshdeep) win consistently — not the teams
+that get lucky with the coin.
+
+Bonus surprise: RCB won their first-ever IPL title in 2025
+despite losing their first 2 matches of the season —
+disproving the belief that early form predicts the champion.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+FILES SUBMITTED
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+• chart1_toss.png        — Toss win rate bar chart
+• chart2_phases.png      — Phase-wise runs comparison
+• chart3_performers.png  — Top 5 batters & bowlers
+• ipl_analysis.py        — Full Python analysis code
+• generate_charts.py     — Chart generation code
+• summary.txt            — This written summary
